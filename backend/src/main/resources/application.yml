@@ -1,0 +1,34 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diploma_db
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+google:
+  client:
+    id: "332550173809-cltd0oui7vav3673kbkph8n0cu61hckf.apps.googleusercontent.com"
+
+gigachat:
+  credentials: "MDE5ZTY2MjEtNTc3YS03ZDE2LTlhMGUtNDZmMWFiNzFlODI0OmFhNGY2YWUyLTNlYjUtNDk0NS1iYzNhLTc2NDk1ZjI3Zjc1Zg==" # В формате Basic <Base64>
+
+jwt:
+  secret: ${JWT_SECRET:MySuperSecretKeyForDiplomaProject2026_AtLeast256BitsLong} # Дефолтный ключ для локальной разработки
+  expiration-ms: 2592000000 # 30 дней в миллисекундах (1000 * 60 * 60 * 24 * 30)

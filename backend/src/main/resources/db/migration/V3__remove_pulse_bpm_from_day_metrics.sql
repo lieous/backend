@@ -1,0 +1,1 @@
+ALTER TABLE day_metrics DROP COLUMN IF EXISTS pulse_bpm;
